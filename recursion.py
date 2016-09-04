@@ -87,10 +87,12 @@ def num_nodes(tree):
     if not tree.children:
         return 1
 
-    for child in tree.children:
-        num_below = 1 + num_nodes(child)
+    count = 1
 
-    return 1 + num_below
+    for child in tree.children:
+        count += num_nodes(child)
+
+    return count
 
 #####################################################################
 # END OF ASSIGNMENT: You can ignore everything below.
