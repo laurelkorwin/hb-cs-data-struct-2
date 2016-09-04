@@ -1,0 +1,99 @@
+RECURSION
+
+1. In your own words, what is Recursion?
+
+Recursion is designing a function such that the function calls itself to complete
+whatever calculations you'd like it to do. The function begins and goes "deeper"
+down the call stack while the interior functions are called in succession.
+There is a "base case" at which the function calls will return (either None, or
+with something else), and then the call stack will finalize up to the "top" to complete.
+
+Although you can write anything where you would otherwise have a for-loop recursively,
+recursion is best used when you are not sure how "deep" you'll need to go - it avoids
+you having to write multiple nested for-loops.
+
+2. Why is it necessary to have a Base Case?
+
+With a base case, you give the recursive function a clear directive on when to "finish"
+and work back up the call stack. Without a base case, you would just keep calling 
+the function over and over forever (or until you exceed the maximum recursion depth).
+
+GRAPHS
+
+1. What is a Graph?
+
+Graphs are similar to trees in that they consist of inter-related nodes. In a graph, each node has an
+"adjancency list" consisting of the 0+ other nodes it is "related" to. Each relationship is marked by
+an "edge" - you can think of it as the line drawn between the two nodes. In addition, each edge can
+store "weight" data - meaningful data on the relationship between the two nodes it connects (ie, 
+flight price for an edge between two cities.)
+
+2. How is a Graph different from a Tree?
+
+Trees are acyclic (relationships / hierarchy goes one direction), graphs can be either
+cylical or acyclic (ie, they can contain relationship "loops").
+
+3. Give an example of somthing that would be good to model with a Graph.
+
+Relationships between friends (ie, on a social network) are good things to model with 
+a graph. Each person can have multiple friends (and in this case you would want the graph
+to be undirected and acyclic, because the relationship goes both ways). In addition, 
+you can then represent connections between mutual friends, etc.
+
+PERFORMANCE OF DATA STRUCTURES
+
+
+Data Structure                  Index   Search  Add-R   Add-L   Pop-L   Pop-R
+
+Python List (Array)             O(1)    O(n)    O(1)    O(n)    O(n)    O(1)            
+Linked List                     O(n)    O(n)    O(1)*   O(1)*   O(1)*   O(n)
+Doubly-Linked List              O(n)    O(n)    O(1)*   O(1)*   O(1)*   O(1)*        
+Queue (as Array)                X       X       O(1)    X       O(n)    X
+Queue (as LL or DLL)            X       X       O(1)    X       O(1)    X
+Stack (as Array, LL, or DLL)    X       X       O(1)    X       X       O(1)
+Deque (as DLL)                  X       X       O(1)    O(1)    O(1)    O(1)         
+
+*Assuming you are keeping track of tail and head.
+
+
+Data Structure          Get     Add     Delete  Iterate Memory
+
+Dictionary (Hash Map)   O(1)    O(1)    O(1)    O(n)    medium
+Set (Hash Map)          O(1)    O(1)    O(1)    O(n)    medium              
+Binary Search Tree      O(logn) O(n)    O(n)    O(1)    low             
+Tree                    O(n)    O(1)    O(1)    O(1)    low 
+
+SORTING
+
+1. Describe in words how the Bubble Sort algorithm works.
+
+Bubble sort works by moving through a list of objects and comparing pairs of items.
+The item that is bigger is then moved to the right of the lesser item. This continues
+until the biggest item "bubbles" to the end, and the process is repeated over and
+over (starting at the beginning of the list each time) until all the items are sorted.
+
+2. Describe in words how the Merge Sort algorithm works.
+
+Merge sort works by breaking the to-be-sorted list in half again and again until you have
+lists of one item each. Then, it works to sort those items and "moves back up" through the lists,
+comparing each value against those in the to-be-merged list, and moving them in sorted order
+into new lists.
+
+
+3. Describe in words how the Quick Sort algorithm works.
+Quick sort operates around a "pivot" point (normally randomly chosen). Everything greater than the pivot
+is moved to the right of the pivot, and everything less moved to the left. Then in each "half" of the list
+to the left and right of the pivot, a new pivot is chosen and items are sorted similarly. This works again
+and again until the entire list is sorted.
+
+GIT BRANCHING
+
+1. Give an instance when you would use git branching.
+
+One example is if you are working on a project with other programmers and you want to work on one feature, etc.
+without "disturbing" the rest of the code. You would "branch" from the master to work on your piece, and then
+merge it back with the main branch when you had completed the project.
+
+2. What is a pull request?
+A pull request is a request to the project owner to check out the work you've done on your subbranch,
+and merge it back into the main branch.
